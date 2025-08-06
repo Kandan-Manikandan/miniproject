@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        #aa{
+            text-align: center;
+            background-color: black;
+            color: whitesmoke;
+            padding: 20px;
+            margin-right: 1px;
+            margin-left: 1px;
+            margin-top: auto;
+            margin-bottom: auto;
+            border: 5px rgb(24, 221, 247) solid;
+            border-radius: 18px;
+        }
+        #bb{
+           /* position: fixed;
+            bottom: 20px;
+            background-color: blue;
+            color: white;
+            padding: 6px 12px;
+            border: 3px rgb(10, 10, 46) solid;
+            border-radius: 10px;
+            margin-left: 40%;*/
+
+            display: block;
+            margin: 40px auto 20px auto;
+            background-color: blue;
+            color: white;
+            padding: 6px 12px;
+            border: 3px rgb(10, 10, 46) solid;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #aa:hover{
+            color: red;
+            background-color: white;
+            border: 5px black solid;
+        }
+
+        #bb:hover{
+            background-color: white;
+            color: black;
+            border: 3px rgb(12, 226, 12) solid;
+        }
+        /* This is product page css */
+
+        * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f9fc;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .product-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 16px;
+      width: 30%;
+      min-width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 90%;
+        height: 70%;
+      border-radius: 8px;
+    }
+
+    .product-card h2 {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .product-card .price {
+      color: green;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+
+    .product-card .description {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .product-card form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .product-card form input,
+    .product-card form button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .product-card form button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .product-card form button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .product-card {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        width: 100%;
+      }
+    }
+    </style>
+</head>
+<body>
+    <h1 id="aa">Welcome to Payment Gateway</h1>
+
+    <!--product in home page-->
+
+     <h1 class="page-title">Our Products</h1>
+  <div class="product-container">
+    <!-- product 1 -->
+    <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product1.png' %}" alt="Product Image">
+      <h2>samsung s24 ultra</h2>
+      <p class="price">1,09,999</p>
+      <p class="description">Front Cam Res: 12 MP
+        Front Cam Video Res: 4K@30/60fps, 1080p@30fps
+        Front Cam Aperture: f/2.2
+        SIM Card: Nano SIM, eSIM</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SjPbPfP3gdoOKz">
+        <input type="hidden" name="price_id" value="price_1RnwmfGbqGlyML07oQSUtH30">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+<!--product 2-->
+    <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product2.png' %}" alt="Product Image">
+      <h2>Vivo T4 Ultra 5G</h2>
+      <p class="price">39,999</p>
+      <p class="description">
+          Battery Life : 5500 mAh
+          Supported OS : Android
+          Front Cam Res : 32 MP
+          Broadband Gen : 5G
+          Mob Broadband Gen : 5G</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SlG5NXmAKkYnVD">
+        <input type="hidden" name="price_id" value="price_1RpjZFGbqGlyML07MQ84Pigc">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+<!-- product 3-->
+      <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product4.png' %}" alt="iPhone 14 Pro Max">
+        <h2>iPhone 14 Pro Max</h2>
+        <p class="price">₹1,29,900</p>
+        <p class="description">Brand	Apple
+            Operating System	iOS
+            Memory Storage Capacity	128 GB
+            Screen Size	6.7 Inches
+            Resolution	4K</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_iphone14">
+          <input type="hidden" name="price_id" value="price_iphone14">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+
+  </div>
+    <div>
+        <h3><a href="/product" id="bb">See all Product</a></h3>
+    </div>
+</body>
+</html>
+
+<!--<div class="product-container">
+    <div class="product-card">
+        {% load static %}
+        <img src="{% static '' %}" alt="">
+      <h2>Product 1</h2>
+      <p class="description">Front Cam Res
+            12 MP
+            Front Cam Video Res
+            4K@30/60fps, 1080p@30fps
+            Front Cam Aperture
+            f/2.2
+            SIM Card
+            Nano SIM, eSIM</p>
+      <div class="price">₹1,09,999</div>
+        <form method="POST">
+            {% csrf_token %}
+            <input type="hidden" name="product_id" value="prod_SjPbPfP3gdoOKz">
+            <input type="hidden" name="price_id" value="price_1RnwmfGbqGlyML07oQSUtH30">
+            <input type="hidden" name="quan" value="1">
+            <button class="buy-btn" type="submit">Buy Now</button>
+        </form>
+      </div>
+  </div> -->

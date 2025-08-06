@@ -1,0 +1,635 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Page</title>
+  <style>
+    * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f7f9fc;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.product-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px;
+  width: 30%;
+  min-width: 250px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.product-card h2 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.product-card .price {
+  color: green;
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.product-card .description {
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.product-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.product-card form input,
+.product-card form button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.product-card form button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.product-card form button:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .product-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 600px) {
+  .product-card {
+    width: 100%;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <h1 class="page-title">Our Products</h1>
+  <div class="product-container">
+
+    <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product1.png' %}" alt="Product Image">
+      <h2>samsung s24 ultra</h2>
+      <p class="price">1,09,999</p>
+      <p class="description">Front Cam Res: 12 MP
+        Front Cam Video Res: 4K@30/60fps, 1080p@30fps
+        Front Cam Aperture: f/2.2
+        SIM Card: Nano SIM, eSIM</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SjPbPfP3gdoOKz">
+        <input type="hidden" name="price_id" value="price_1RnwmfGbqGlyML07oQSUtH30">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+
+    <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product2.png' %}" alt="Product Image">
+      <h2>Vivo T4 Ultra 5G</h2>
+      <p class="price">39,999</p>
+      <p class="description">
+          Battery Life : 5500 mAh
+          Supported OS : Android
+          Front Cam Res : 32 MP
+
+    <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product2.png' %}" alt="Product Image">
+      <h2>Vivo T4 Ultra 5G</h2>
+      <p class="price">39,999</p>
+      <p class="description">
+          Battery Life : 5500 mAh
+          Supported OS : Android
+          Front Cam Res : 32 MP
+          Broadband Gen : 5G
+          Mob Broadband Gen : 5G</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SlG5NXmAKkYnVD">
+        <input type="hidden" name="price_id" value="price_1RpjZFGbqGlyML07MQ84Pigc">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+
+      <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product3.jpg' %}" alt="Product Image">
+      <h2>Vivo V50 5G</h2>
+      <p class="price">30,899</p>
+      <p class="description">
+    Brand : VIVO
+    Operating System : Funtouch OS 15
+    RAM Memory Installed Size : 8 GB
+    CPU Model : 80C31
+    CPU Speed : 3.4 Hz</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SlMvslvhrXTof0">
+        <input type="hidden" name="price_id" value="price_1RpqBTGbqGlyML074qnlj2Eq">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+
+      <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product1.png' %}" alt="Product Image">
+      <h2>Product Name</h2>
+      <p class="price">$59.99</p>
+      <p class="description">Front Cam Res: 12 MP
+        Front Cam Video Res: 4K@30/60fps, 1080p@30fps
+        Front Cam Aperture: f/2.2
+        SIM Card: Nano SIM, eSIM</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SjPbPfP3gdoOKz">
+        <input type="hidden" name="price_id" value="price_1RnwmfGbqGlyML07oQSUtH30">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+
+      <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product1.png' %}" alt="Product Image">
+      <h2>Product Name</h2>
+      <p class="price">$59.99</p>
+      <p class="description">Front Cam Res: 12 MP
+        Front Cam Video Res: 4K@30/60fps, 1080p@30fps
+        Front Cam Aperture: f/2.2
+        SIM Card: Nano SIM, eSIM</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SjPbPfP3gdoOKz">
+        <input type="hidden" name="price_id" value="price_1RnwmfGbqGlyML07oQSUtH30">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+
+      <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product1.png' %}" alt="Product Image">
+      <h2>Product Name</h2>
+      <p class="price">$59.99</p>
+      <p class="description">Front Cam Res: 12 MP
+        Front Cam Video Res: 4K@30/60fps, 1080p@30fps
+        Front Cam Aperture: f/2.2
+        SIM Card: Nano SIM, eSIM</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SjPbPfP3gdoOKz">
+        <input type="hidden" name="price_id" value="price_1RnwmfGbqGlyML07oQSUtH30">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+
+      <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product1.png' %}" alt="Product Image">
+      <h2>Product Name</h2>
+      <p class="price">$59.99</p>
+      <p class="description">Front Cam Res: 12 MP
+        Front Cam Video Res: 4K@30/60fps, 1080p@30fps
+        Front Cam Aperture: f/2.2
+        SIM Card: Nano SIM, eSIM</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SjPbPfP3gdoOKz">
+        <input type="hidden" name="price_id" value="price_1RnwmfGbqGlyML07oQSUtH30">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+
+  </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Product Page with Categories</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f9fc;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .category-selector {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+      margin: 30px 0 15px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+
+    .product-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .product-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      padding: 16px;
+      width: 30%;
+      min-width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .product-card img {
+      width: 90%;
+        height: 75%;
+      border-radius: 8px;
+    }
+
+    .product-card h2 {
+      margin-top: 10px;
+      font-size: 1.2rem;
+    }
+
+    .price {
+      color: green;
+      font-weight: bold;
+      margin: 8px 0;
+    }
+
+    .description {
+      font-size: 0.9rem;
+      margin-bottom: 12px;
+    }
+
+    .product-card form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .product-card form input,
+    .product-card form button {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .product-card form button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .product-card form button:hover {
+      background-color: #0056b3;
+    }
+
+    @media (max-width: 992px) {
+      .product-card {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .product-card {
+        width: 100%;
+      }
+    }
+
+    .category-section {
+      display: none;
+    }
+
+    .category-section.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  {% load static %}
+  <h1 class="page-title">Our Products</h1>
+
+  <!-- Category Dropdown -->
+  <div class="category-selector">
+    <label for="categorySelect">Choose Category:</label>
+    <select id="categorySelect">
+      <option value="all">All Products</option>
+      <option value="iphone">iPhones</option>
+      <option value="samsung">Samsung</option>
+      <option value="vivo">Vivo</option>
+      <option value="oppo">Oppo</option>
+    </select>
+  </div>
+
+  <!-- All Products Section -->
+  <div class="category-section active" id="all">
+    <h2 class="category-title">All Products</h2>
+    <div class="product-container">
+      <!-- Copy all products from each category here -->
+
+
+      <div class="product-card">
+        <img src="{% static 'product1.png' %}" alt="Samsung S24 Ultra">
+        <h2>Samsung S24 Ultra</h2>
+        <p class="price">₹1,09,999</p>
+        <p class="description">12 MP Front Cam, 4K Video, Nano SIM/eSIM</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_SjPbPfP3gdoOKz">
+        <input type="hidden" name="price_id" value="price_1RnwmfGbqGlyML07oQSUtH30">
+          <input type="hidden" name="quan" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+
+      <div class="product-card">{% load static %}
+      <img src="{% static 'product3.jpg' %}" alt="Product Image">
+      <h2>Vivo V50 5G</h2>
+      <p class="price">30,899</p>
+      <p class="description">
+        Brand : VIVO
+        Operating System : Funtouch OS 15
+        RAM Memory Installed Size : 8 GB
+        CPU Model : 80C31
+        CPU Speed : 3.4 Hz</p>
+      <form method="POST">{% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SlMvslvhrXTof0">
+        <input type="hidden" name="price_id" value="price_1RpqBTGbqGlyML074qnlj2Eq">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+
+      <div class="product-card">
+        <img src="{% static 'product1.png' %}" alt="Oppo A78">
+        <h2>Oppo A78</h2>
+        <p class="price">₹18,499</p>
+        <p class="description">50MP Camera, 5000mAh Battery</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_oppo1">
+          <input type="hidden" name="price_id" value="price_oppo1">
+          <input type="hidden" name="quan" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+
+        <div class="product-card">
+        <img src="{% static 'product2.png' %}" alt="Vivo T4 Ultra">
+        <h2>Vivo T4 Ultra 5G</h2>
+        <p class="price">₹39,999</p>
+        <p class="description">32 MP Cam, 5500 mAh, 5G</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_SlG5NXmAKkYnVD">
+          <input type="hidden" name="price_id" value="price_1RpjZFGbqGlyML07MQ84Pigc">
+          <input type="hidden" name="quan" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+
+        <div class="product-card">
+        <img src="{% static 'product4.png' %}" alt="iPhone 14 Pro Max">
+        <h2>iPhone 14 Pro Max</h2>
+        <p class="price">₹1,29,900</p>
+        <p class="description">Brand	Apple
+            Operating System	iOS
+            Memory Storage Capacity	128 GB
+            Screen Size	6.7 Inches
+            Resolution	4K</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_SoKpDTNv70nE4K">
+          <input type="hidden" name="price_id" value="price_1Rsi9YGbqGlyML07sEgERtpE">
+          <input type="hidden" name="quan" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+
+        <div class="product-card">
+        <img src="{% static 'product5.png' %}" alt="iPhone 14 Pro Max">
+        <h2>iPhone 15 Pro Max</h2>
+        <p class="price">₹1,54,900</p>
+        <p class="description">Colour: Black Titanium, Brand : Apple,Operating System : iOS,
+            Memory Storage Capacity : 512 GB,
+            Screen Size : 6.7 Inches, Model Name : iPhone 15 Pro Max</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_SoKjyVrB3g2bTZ">
+          <input type="hidden" name="price_id" value="price_1Rsi3mGbqGlyML07CzOkjXrY">
+          <input type="hidden" name="quan" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- iPhone -->
+  <div class="category-section" id="iphone">
+    <h2 class="category-title">iPhones</h2>
+    <div class="product-container">
+      <div class="product-card">
+        <img src="{% static 'product4.png' %}" alt="iPhone 14 Pro Max">
+        <h2>iPhone 14 Pro Max</h2>
+        <p class="price">₹1,29,900</p>
+        <p class="description">Brand	Apple
+            Operating System	iOS
+            Memory Storage Capacity	128 GB
+            Screen Size	6.7 Inches
+            Resolution	4K</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_SoKpDTNv70nE4K">
+          <input type="hidden" name="price_id" value="price_1Rsi9YGbqGlyML07sEgERtpE">
+          <input type="hidden" name="quan" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+
+        <div class="product-card">
+        <img src="{% static 'product5.png' %}" alt="iPhone 14 Pro Max">
+        <h2>iPhone 15 Pro Max</h2>
+        <p class="price">₹1,54,900</p>
+        <p class="description">Colour: Black Titanium, Brand : Apple,Operating System : iOS,
+            Memory Storage Capacity : 512 GB,
+            Screen Size : 6.7 Inches, Model Name : iPhone 15 Pro Max</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_SoKjyVrB3g2bTZ">
+          <input type="hidden" name="price_id" value="price_1Rsi3mGbqGlyML07CzOkjXrY">
+          <input type="hidden" name="quan" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+
+
+    </div>
+  </div>
+
+  <!-- Samsung -->
+  <div class="category-section" id="samsung">
+    <h2 class="category-title">Samsung</h2>
+    <div class="product-container">
+      <div class="product-card">
+        <img src="{% static 'product1.png' %}" alt="Samsung S24 Ultra">
+        <h2>Samsung S24 Ultra</h2>
+        <p class="price">₹1,09,999</p>
+        <p class="description">12 MP Front Cam, 4K Video, Nano SIM/eSIM</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_SjPbPfP3gdoOKz">
+        <input type="hidden" name="price_id" value="price_1RnwmfGbqGlyML07oQSUtH30">
+          <input type="hidden" name="quan" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Vivo -->
+  <div class="category-section" id="vivo">
+    <h2 class="category-title">Vivo</h2>
+    <div class="product-container">
+      <div class="product-card">
+        <img src="{% static 'product2.png' %}" alt="Vivo T4 Ultra">
+        <h2>Vivo T4 Ultra 5G</h2>
+        <p class="price">₹39,999</p>
+        <p class="description">32 MP Cam, 5500 mAh, 5G</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_SlG5NXmAKkYnVD">
+        <input type="hidden" name="price_id" value="price_1RpjZFGbqGlyML07MQ84Pigc">
+          <input type="hidden" name="quan" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+
+        <div class="product-card">
+      {% load static %}
+      <img src="{% static 'product3.jpg' %}" alt="Product Image">
+      <h2>Vivo V50 5G</h2>
+      <p class="price">30,899</p>
+      <p class="description">
+    Brand : VIVO
+    Operating System : Funtouch OS 15
+    RAM Memory Installed Size : 8 GB
+    CPU Model : 80C31
+    CPU Speed : 3.4 Hz</p>
+      <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="prod_SlMvslvhrXTof0">
+        <input type="hidden" name="price_id" value="price_1RpqBTGbqGlyML074qnlj2Eq">
+        <input type="hidden" name="quan" value="1">
+        <button type="submit">Buy Now</button>
+      </form>
+    </div>
+
+    </div>
+  </div>
+
+  <!-- Oppo -->
+  <div class="category-section" id="oppo">
+    <h2 class="category-title">Oppo</h2>
+    <div class="product-container">
+      <div class="product-card">
+        <img src="{% static 'product1.png' %}" alt="Oppo A78">
+        <h2>Oppo A78</h2>
+        <p class="price">₹18,499</p>
+        <p class="description">50MP Camera, 5000mAh Battery</p>
+        <form method="POST">{% csrf_token %}
+          <input type="hidden" name="product_id" value="prod_oppo1">
+          <input type="hidden" name="price_id" value="price_oppo1">
+          <input type="hidden" name="quan" value="1">
+          <button type="submit">Buy Now</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const select = document.getElementById('categorySelect');
+    const sections = document.querySelectorAll('.category-section');
+
+    select.addEventListener('change', () => {
+      const selected = select.value;
+      sections.forEach(section => {
+        section.classList.remove('active');
+        if (selected === 'all') {
+          document.getElementById('all').classList.add('active');
+        } else if (section.id === selected) {
+          section.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+
